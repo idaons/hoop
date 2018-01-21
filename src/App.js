@@ -20,9 +20,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-          <Menu open={this.state.menuOpen} callback={()=>this.toggleMenu()}/>
-          <Trick/>
+      <div>
+        <Menu open={this.state.menuOpen} callback={()=>this.toggleMenu()}/>
+        <Trick/>
       </div>
        );
   }

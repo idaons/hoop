@@ -1,6 +1,39 @@
 
 
-.center {
+h1.overskrift {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
-  background-color:pink;
+}
+
+.mb {
+  margin-bottom: 1rem;
+}
+
+.mb-l {
+  margin-bottom: 2rem;
+}
+
+
+.etikett{
+  background-color: @side-color-1-1;
+  padding: 0.5rem;
+  .mb;
+}
+
+.etikett:nth-child(2){
+  background-color: @side-color-1-2;
+}
+
+.etikett:nth-child(3){
+  background-color: @side-color-1-0;
+}
+
+.etikett:not(:last-child){
+  margin-right: 1rem;
+
+}
+
+.link{
+  color: @side-color-1-4
 }
