@@ -29,8 +29,8 @@ function Menu({open, callback, height}){
                     <div className="topWrapper">
                         <a href="#" className="btn-close" onClick={()=>callback()}>
                             <img className="svg" src={HulaColor} alt="Colorful Hula Hoop" />
+                            <h3 className="tittel">Meny</h3>
                         </a>
-                        <h3 className="tittel">Meny</h3>
                     </div>
                     <div className="content">
                         <nav className="navigation">

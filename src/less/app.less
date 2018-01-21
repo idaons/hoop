@@ -1,17 +1,63 @@
 @import '../modules/menu/menu.less';
 @import '../modules/trick.less';
 
-body {
+body, html {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: sans-serif;
-  background-color: @rgba-background-light;
+  background-color: @hoopblack;
+  overflow-x: hidden;
+}
+
+.app {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+footer {
+  justify-content: center;
+  align-content: center;
+  grid-row: 3/4;
+  width: 100vw;
+  height: 70px;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  box-sizing: border-box;
+  background-color: @side-color-1-4;
+  border-top: @background-4 5px solid;
+  &> div {
+    background-color: @side-color-1-3;
+    height: 100%;
+    color: @hoopwhite;
+    h4 {
+      text-align: center;
+      margin: 0 auto;
+      padding: 1.5em;
+      opacity: 0.5;
+    }
+  }
 }
 
 .container {
   display: block;
   max-width: 700px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+.main-content {
+  background-color: @background-1;
+  top: 0;
+  bottom: 0;
+  padding: 1em;
+  box-sizing: border-box;
 }
 
 /* Palette color codes */
@@ -21,7 +67,7 @@ body {
 
 /* As hex codes */
 
-@hoopwhite: #ffffff;
+@hoopwhite: #ededed;
 @hoopblack: #1a1a1a;
 
 @background-0: #2D882D;	/* Main Primary color */
@@ -44,7 +90,7 @@ body {
 
 /* As RGBa codes */
 
-@rgba-background-0: rgba( 45,136, 45,1);	/* Main Primary color */
+@rgba-background-lighter: rgba( 45,136, 45, 0.7);	/* Main Primary color */
 @rgba-background-light: rgba( 45,136, 45,0.7);	/* Main Primary color */
 @rgba-primary-1: rgba(126,204,126,1);
 @rgba-primary-2: rgba( 81,170, 81,1);
