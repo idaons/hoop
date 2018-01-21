@@ -24,7 +24,7 @@ class App extends Component {
         <Menu open={this.state.menuOpen} callback={()=>this.toggleMenu()}/>
         <Trick/>
       </div>
-       );
+    );
   }
 }
 
