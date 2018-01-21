@@ -12,7 +12,7 @@ function Trick(){
         name: 'Spleiselag Christina S',
         description: `Flipp ringen over ryggen: Start med tommel opp 
         på ringen, rull over hånda og før ringen rundt foran deg slik 
-        at tommelen kommer opp. Flipp ringen bak ryggen og la den falle 
+        at tommelen kommer opp. Før ringen bak ryggen og la den falle 
         ned (som fra escalator), sett ben i kryss, før ring ut og rundt
         mens du snur deg helt rundt. Bytt hånd og gjør isopops til hver
         side.`,
@@ -31,11 +31,21 @@ function Trick(){
                     </span>
             )}
             <div className="container">
-                <p>{dummyObj.description}</p>
+                <ul>
+                    {dummyObj.description.split('.').map((step, i) =>
+                        step.length>0 && <li key={i}>{step}</li>
+                    )}
+                </ul>
             </div>
-            <a
-                className="link"
-                href={dummyObj.video}>Link til video</a>
+            <div className="mb-l">
+                <a
+                    className="link"
+                    href={dummyObj.video}>Link til video</a>
+            </div>
+            <div className="center">
+                <button className="button">Forrige</button>
+                <button className="button">Neste</button>
+            </div>
         </div>
     );
 }

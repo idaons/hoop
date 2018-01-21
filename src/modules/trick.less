@@ -2,9 +2,13 @@
   box-shadow: 0 0.1em 0.5em @hoopblack;
 }
 
+.center {
+  text-align: center;
+}
+
 h1.overskrift {
   margin: 1em auto;
-  text-align: center;
+  .center
 }
 
 .mb {
@@ -42,9 +46,36 @@ h1.overskrift {
   color: @side-color-1-4
 }
 
+ul {
+  margin: 2rem 0;
+  padding: 1rem 1rem 1rem 2rem;
+  background-color: rgba(200, 200, 200, 0.7);
+  .box-shadow;
+}
 p {
   margin: 2em 0;
   padding: 1em;
   background-color: @hoopwhite;
   .box-shadow;
+}
+
+.button {
+  background:none;
+  color:inherit;
+  border:none;
+  padding:0!important;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:hover{
+  text-decoration:underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:not(:last-child){
+  margin-right: 1rem;
 }
