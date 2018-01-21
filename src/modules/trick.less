@@ -1,8 +1,9 @@
-
+.box-shadow {
+  box-shadow: 0 0.1em 0.5em @hoopblack;
+}
 
 h1.overskrift {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1em auto;
   text-align: center;
 }
 
@@ -18,6 +19,7 @@ h1.overskrift {
 .etikett{
   background-color: @side-color-1-1;
   padding: 0.5rem;
+  .box-shadow;
   .mb;
 }
 
@@ -31,9 +33,18 @@ h1.overskrift {
 
 .etikett:not(:last-child){
   margin-right: 1rem;
-
 }
 
 .link{
   color: @side-color-1-4
+}
+
+p {
+  margin: 2em 0;
+  padding: 1em;
+  background-color: rgba(200, 200, 200, 0.7);
+  .box-shadow;
+}
+
+.main-content {
 }

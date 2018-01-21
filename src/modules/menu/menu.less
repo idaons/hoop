@@ -24,17 +24,23 @@
   }
 
   .side-menu {
+    background-color: @side-color-1-4;
     width: 100vw;
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: @side-color-1-3;
-    background-repeat: no-repeat;
-    background-position: 70% 80px;
     overflow: hidden;
     transition: 0.5s;
     box-sizing: border-box;
-    border-bottom: @side-color-1-4 5px solid;
+    border-bottom: @side-color-1-0 5px solid;
+    .container {
+      background-color: @side-color-1-3;
+      background-repeat: no-repeat;
+      background-position: 70% 80px;
+      bottom: 0;
+      top: 0;
+      height: 100%;
+    }
 
     .topWrapper {
       &> * {
@@ -50,8 +56,9 @@
         }
       }
       h3 {
-        color: @side-color-1-0;
-        margin-top: 25px;
+        color: @hoopwhite;
+        opacity: 0.5;
+        margin-top: 35px;
         text-transform: uppercase;
       }
     }

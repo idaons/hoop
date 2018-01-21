@@ -23,38 +23,19 @@ function Trick(){
     }
 
     return(
-        <div className="container">
+        <div className="container main-content">
             <h1 className="overskrift">{dummyObj.name}</h1>
-            <div className="row mb">
-                <div className="col-sm-6 col-xs-12">
-                {dummyObj.categories.map((category,i) =>
+            {dummyObj.categories.map((category,i) =>
                     <span className="etikett">
                         {category }
                     </span>
-                )}
-                </div>
+            )}
+            <div className="container">
+                <p>{dummyObj.description}</p>
             </div>
-            <div className="row text-center">
-                <div className="col-xs-12">
-
-                </div>
-            </div>
-            <div className="row mb-l">
-                <div className="col-xs-12 col-sm-8">
-                    {dummyObj.description}
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-xs-12 col-sm-8">
-                    <a
-                        className="link"
-                        href={dummyObj.video}>Link til video</a>
-                </div>
-            </div>
-
-
-
+            <a
+                className="link"
+                href={dummyObj.video}>Link til video</a>
         </div>
     );
 }
