@@ -10,7 +10,7 @@ function Menu({open, callback, height}){
     }
 
     function showContent() {
-        return open ? {height: height + 'px'} : {height: '0'};
+        return open ? {height: height + 'px', 'background-image': `url(${HulaDancer})`} : {height: '80px', 'background-image': `url(${HulaDancer})`};
     }
 
     return(
@@ -23,9 +23,12 @@ function Menu({open, callback, height}){
                 </a>
             </span>
             <div id="side-menu" className="side-menu" style={showContent()}>
-                <a href="#" className="btn-close" onClick={()=>callback()}>
-                    <img className="svg" src={HulaColor} alt="Colorful Hula Hoop"/>
-                </a>
+                <div className="topWrapper">
+                    <a href="#" className="btn-close" onClick={()=>callback()}>
+                        <img className="svg" src={HulaColor} alt="Colorful Hula Hoop" />
+                    </a>
+                    <h3 className="tittel">Meny</h3>
+                </div>
                 <div className="content">
                     <nav className="navigation">
                         <a href="#">Legg til triks</a>
@@ -33,9 +36,6 @@ function Menu({open, callback, height}){
                         <a href="#">Søk</a>
                         <a href="#">Lag hoop-sekvens</a>
                     </nav>
-                </div>
-                <div className="logo">
-                    <img src={HulaDancer} alt="Hula Hoop Dancer"/>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@ Menu.propTypes = {
 };
 
 Menu.defaultProps = {
-    height: '350',
+    height: '370',
 };
 
 export default Menu;
