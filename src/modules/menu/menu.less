@@ -1,30 +1,6 @@
 .side-menu-container {
-  @keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  .btn-close, .btn-open-side-menu {
-    margin: 0.7em;
-    top: 0;
-    left: 0;
-  }
-  .btn-open-side-menu {
-    display: none;
-    position: fixed;
-    opacity: 0.5;
-    transition: 0.3s;
-    animation: App-logo-spin infinite 8s linear;
-    svg {
-      height: 50px;
-      fill: @background-1;
-    }
-    &:hover{
-      opacity: 0.80;
-    }
-  }
-
   .side-menu {
-    background-color: @side-color-1-4;
+    background-color: @kontrast-veldig-mork;
     width: 100vw;
     z-index: 1;
     top: 0;
@@ -32,11 +8,12 @@
     overflow: hidden;
     transition: 0.5s;
     box-sizing: border-box;
-    border-bottom: @background-3 5px solid;
+    border-bottom: darken(@primary, 20%) 5px solid;
     .container {
-      background-color: @side-color-1-3;
+      background-color: @kontrast-mork;
       background-repeat: no-repeat;
-      background-position: 70% 80px;
+      background-position: 80% 80px;
+      background-size: 200px;
       bottom: 0;
       top: 0;
       height: 100%;
@@ -47,10 +24,17 @@
         float: left;
       }
       .btn-close {
+        margin: 0.7em;
+        top: 0;
+        left: 0;
         display: block;
         width: 50px;
-        opacity: 0.5;
+        opacity: 0.8;
         img {
+          @keyframes App-logo-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
           animation: App-logo-spin infinite 8s linear;
         }
         &:hover{
@@ -59,10 +43,10 @@
       }
       h3 {
         margin-left: 14px;
-        margin-top: 17px;
+        margin-top: 7px;
         position: absolute;
         color: @hoopwhite;
-        opacity: 0.5;
+        opacity: 0.8;
         text-transform: uppercase;
         display: inline-block;
       }
@@ -70,18 +54,18 @@
 
     .navigation {
       a {
-        width: 15em;
+        width: 280px;
         padding: 10px;
         margin-bottom: 3px;
         text-decoration: none;
         font-size: 22px;
-        color: @side-color-2-0;
+        color: @hoopwhite;
         display: block;
         transition: 0.3s;
         opacity: 0.9;
-        background-color: @side-color-1-2;
+        background-color: @primary;
         &:hover {
-          color: #fff;
+          color: @hoopblack;
           opacity: 0.6;
         }
       }

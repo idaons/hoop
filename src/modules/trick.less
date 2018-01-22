@@ -1,81 +1,115 @@
 .box-shadow {
-  box-shadow: 0 0.1em 0.5em @hoopblack;
+  box-shadow: 0 1px 2px lighten(@primary, 30%);
 }
 
-.center {
-  text-align: center;
-}
-
-h1.overskrift {
-  margin: 1em auto;
-  .center
-}
-
-.mb {
-  margin-bottom: 1rem;
-}
-
-.mb-l {
-  margin-bottom: 2rem;
-}
-
-
-.etikett{
-  background-color: @side-color-1-1;
-  padding: 0.5rem;
-  &:hover {
-    opacity: 0.8;
+.trick-container {
+  .center {
+    text-align: center;
   }
-  .box-shadow;
-  .mb;
-}
 
-.etikett:nth-child(2){
-  background-color: @side-color-1-2;
-}
+  .mb {
+    margin-bottom: 1rem;
+  }
 
-.etikett:nth-child(3){
-  background-color: @side-color-1-0;
-}
+  .mb-l {
+    margin-bottom: 2rem;
+  }
 
-.etikett:not(:last-child){
-  margin-right: 1rem;
-}
+  .etikett {
+    background-color: @kontrast-lys;
+    padding: 0.5rem;
+    position: relative;
+    font-size: 1.2em;
+    .box-shadow;
+    .mb;
+  }
 
-.link{
-  color: @side-color-1-4
-}
+  .etikett:nth-child(2) {
+    background-color: @kontrast;
+  }
 
-ul {
-  margin: 2rem 0;
-  padding: 1rem 1rem 1rem 2rem;
-  background-color: rgba(200, 200, 200, 0.7);
-  .box-shadow;
-}
-p {
-  margin: 2em 0;
-  padding: 1em;
-  background-color: @hoopwhite;
-  .box-shadow;
-}
+  .etikett:nth-child(3) {
+    background-color: @kontrast;
+  }
 
-.button {
-  background:none;
-  color:inherit;
-  border:none;
-  padding:0!important;
-  font: inherit;
-  cursor: pointer;
-}
+  .etikett:not(:last-child) {
+    margin-right: 1rem;
+  }
 
-.button:hover{
-  text-decoration:underline;
-}
+  .link {
+    color: darken(@secondary, 20%);
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
 
-.button:focus {
-  outline: none;
-}
+  ul {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.8em;
+    margin: 2rem 0;
+    padding: 1rem 1rem 1rem 2rem;
+    background-color: @hoopwhite;
+    .box-shadow;
+  }
+  li {
+    padding-bottom: 0.5em;
+  }
+  p {
+    margin: 2em 0;
+    padding: 1em;
+    background-color: @hoopwhite;
+    .box-shadow;
+  }
 
-.button:not(:last-child){
-  margin-right: 1rem;
+  .button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    text-decoration: underline;
+  }
+
+  .button:focus {
+    outline: none;
+  }
+
+  .button:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .showcase {
+    position: relative;
+    height: 250px;
+    background-color: black;
+    overflow: hidden;
+    margin: -1em -1em 0;
+    &> * {
+      position: absolute;
+    }
+    h1.overskrift {
+      top: 25px;
+      position: relative;
+      color: @hoopwhite;
+      font-size: 3em;
+      .center
+    }
+    .rotate {
+      width: 100%;
+      @keyframes App-logo-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      animation: App-logo-spin infinite 120s linear;
+    }
+    svg {
+      stroke: darken(@secondary, 30%);
+      fill: @hoopblack;
+    }
+  }
 }
