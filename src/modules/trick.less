@@ -16,7 +16,7 @@
   }
 
   .etikett {
-    background-color: @kontrast-lys;
+    background-color: @secondary;
     padding: 0.5rem;
     position: relative;
     font-size: 1.2em;
@@ -25,11 +25,11 @@
   }
 
   .etikett:nth-child(2) {
-    background-color: @kontrast;
+    background-color: lighten(@secondary,5%);
   }
 
   .etikett:nth-child(3) {
-    background-color: @kontrast;
+    background-color: darken(@secondary,5%);
   }
 
   .etikett:not(:last-child) {
@@ -84,6 +84,7 @@
   }
 
   .showcase {
+    display:flex;
     position: relative;
     height: 250px;
     background-color: black;
@@ -93,7 +94,7 @@
       position: absolute;
     }
     h1.overskrift {
-      top: 25px;
+      margin: auto;
       position: relative;
       color: @hoopwhite;
       font-size: 3em;
@@ -105,7 +106,7 @@
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
       }
-      animation: App-logo-spin infinite 120s linear;
+      animation: App-logo-spin infinite 240s linear;
     }
     svg {
       stroke: darken(@secondary, 30%);

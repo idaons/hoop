@@ -34,10 +34,10 @@ footer {
   overflow: hidden;
   transition: 0.5s;
   box-sizing: border-box;
-  background-color: @kontrast-veldig-mork;
-  border-top: darken(@primary, 20%) 5px solid;
+  background-color: darken(@primary,40%);
+  border-top: darken(@secondary, 30%) 5px solid;
   &> div {
-    background-color: @kontrast-mork;
+    background-color: darken(@primary,20%);
     height: 100%;
     color: @hoopwhite;
     h4 {
@@ -52,6 +52,9 @@ footer {
 .container {
   display: block;
   max-width: 700px;
+  @media(max-width: 750px){
+    max-width: 750px;
+  }
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -72,9 +75,3 @@ footer {
 
 @hoopwhite: #fff;
 @hoopblack: #1a1a1a;
-@background-mork: darken(@primary, 20%);
-@kontrast: lighten(@secondary, 10%);
-@kontrast-lys: lighten(@secondary, 20%);
-@kontrast-mork: darken(@secondary, 20%);
-@kontrast-veldig-mork: darken(@secondary, 40%);
-@kontrast2: lighten(@tertiary, 20%);

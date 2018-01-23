@@ -1,6 +1,6 @@
 .side-menu-container {
   .side-menu {
-    background-color: @kontrast-veldig-mork;
+    background-color: darken(@primary, 40%);
     width: 100vw;
     z-index: 1;
     top: 0;
@@ -8,9 +8,9 @@
     overflow: hidden;
     transition: 0.5s;
     box-sizing: border-box;
-    border-bottom: darken(@primary, 20%) 5px solid;
+    border-bottom: darken(@secondary, 30%) 5px solid;
     .container {
-      background-color: @kontrast-mork;
+      background-color: darken(@primary, 20%);
       background-repeat: no-repeat;
       background-position: 80% 80px;
       background-size: 200px;
@@ -46,7 +46,6 @@
         margin-top: 7px;
         position: absolute;
         color: @hoopwhite;
-        opacity: 0.8;
         text-transform: uppercase;
         display: inline-block;
       }
@@ -62,8 +61,7 @@
         color: @hoopwhite;
         display: block;
         transition: 0.3s;
-        opacity: 0.9;
-        background-color: @primary;
+        background-color: fade(@secondary, 70%);
         &:hover {
           color: @hoopblack;
           opacity: 0.6;
