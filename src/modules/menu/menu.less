@@ -1,16 +1,11 @@
-.side-menu-container {
-  .side-menu {
-    background-color: darken(@primary, 40%);
-    width: 100vw;
-    z-index: 1;
-    top: 0;
-    right: 0;
+.menu-container {
+  .menu {
+    background-color: darken(@primary, 15%);
     overflow: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
     box-sizing: border-box;
-    border-bottom: darken(@secondary, 30%) 5px solid;
     .container {
-      background-color: darken(@primary, 20%);
+      background-color: @primary;
       background-repeat: no-repeat;
       background-position: 80% 80px;
       background-size: 200px;
@@ -24,6 +19,7 @@
         float: left;
       }
       .btn-close {
+        transition: 0.3s;
         margin: 0.7em;
         top: 0;
         left: 0;
@@ -64,7 +60,7 @@
         background-color: fade(@secondary, 70%);
         &:hover {
           color: @hoopblack;
-          opacity: 0.6;
+          background-color: @secondary;
         }
       }
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PT from 'prop-types';
 import HulaColor from '../../img/hula-hoop.svg';
-import HulaDancer from '../../img/hula.png'
+import HulaDancer from '../../img/hula-dancer.svg'
 
 function Menu({open, callback, height}){
 
@@ -14,8 +14,8 @@ function Menu({open, callback, height}){
     }
 
     return(
-        <div className="side-menu-container">
-            <div id="side-menu" className="side-menu" style={showContent()}>
+        <div className="menu-container">
+            <div id="menu" className="menu" style={showContent()}>
                 <div className="container" style={{'background-image': `url(${HulaDancer})`}}>
                     <div className="topWrapper">
                         <a href="#" className="btn-close" onClick={()=>callback()}>

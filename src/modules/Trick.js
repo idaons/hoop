@@ -1,33 +1,35 @@
 import React from 'react';
-import HulaBW from '../img/hula-hoop-bw.svg';
+import HulaBW from '../img/hoop.svg';
 import ReactSVG from 'react-svg';
 
 
-function Trick(){
-
-    const Category = {
-        OFF_BODY: 'Off-body',
-        COMBO: 'Combo',
-        VERTICAL: 'Vertical'
-    }
-    const dummyObj = {
-        id: undefined,
-        name: 'Spleiselag Christina S',
-        description: `Flipp ringen over ryggen: Start med tommel opp 
+const Category = {
+    OFF_BODY: 'Off-body',
+    COMBO: 'Combo',
+    VERTICAL: 'Vertical'
+};
+const dummyObj = {
+    id: undefined,
+    name: 'Spleiselag Christina S',
+    description: `Flipp ringen over ryggen: Start med tommel opp 
         på ringen, rull over hånda og før ringen rundt foran deg slik 
         at tommelen kommer opp. Før ringen bak ryggen og la den falle 
         ned (som fra escalator), sett ben i kryss, før ring ut og rundt
         mens du snur deg helt rundt. Bytt hånd og gjør isopops til hver
         side.`,
-        categories: [Category.OFF_BODY, Category.COMBO, Category.VERTICAL],
-        leadingTricks:  [],
-        trailingTricks: [],
-        video: 'https://www.facebook.com/gerald.torgersen/videos/10215738877330922/'
-    }
+    categories: [Category.OFF_BODY, Category.COMBO, Category.VERTICAL],
+    leadingTricks:  [],
+    trailingTricks: [],
+    video: 'https://www.facebook.com/gerald.torgersen/videos/10215738877330922/'
+};
 
+function Trick(props){
     return(
-        <div className="container main-content trick-container">
+        <div className="container trick-container">
             <div className="container showcase">
+                <div className="rotate2">
+                    <ReactSVG path={HulaBW} />
+                </div>
                 <div className="rotate">
                     <ReactSVG path={HulaBW} />
                 </div>

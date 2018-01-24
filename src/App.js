@@ -21,8 +21,12 @@ class App extends Component {
   render() {
     return (
         <div className="app">
-            <Menu open={this.state.menuOpen} callback={()=>this.toggleMenu()}/>
-            <Trick/>
+            <div className="navigation-menu">
+                <Menu open={this.state.menuOpen} callback={()=>this.toggleMenu()}/>
+            </div>
+            <div className="main-content">
+                <Trick/>
+            </div>
             <footer className="footer">
                 <div className="container">
                     <h4>App by Ida and Daniel</h4>

@@ -11,7 +11,6 @@ body, html {
 
 body {
   background-color: @hoopblack;
-  overflow-x: hidden;
 }
 
 .app {
@@ -20,33 +19,7 @@ body {
   grid-template-rows: auto 1fr auto;
   font-size: 25px;
   font-family: 'Amatic SC', cursive;
-}
-
-footer {
-  justify-content: center;
-  align-content: center;
-  grid-row: 3/4;
-  width: 100vw;
-  height: 70px;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  overflow: hidden;
-  transition: 0.5s;
-  box-sizing: border-box;
-  background-color: darken(@primary,40%);
-  border-top: darken(@secondary, 30%) 5px solid;
-  &> div {
-    background-color: darken(@primary,20%);
-    height: 100%;
-    color: @hoopwhite;
-    h4 {
-      text-align: center;
-      margin: 0 auto;
-      padding: 1em;
-      opacity: 0.5;
-    }
-  }
+  overflow-x: hidden;
 }
 
 .container {
@@ -60,18 +33,50 @@ footer {
 }
 
 .main-content {
-  background-color: lighten(@primary, 45%);
-  top: 0;
-  bottom: 0;
-  padding: 1em;
-  box-sizing: border-box;
+  border-bottom: darken(@primary, 10%) 5px solid;
+  border-top: darken(@primary, 10%) 5px solid;
+}
+
+footer {
+  height: 70px;
+  overflow: hidden;
+  transition: 0.5s;
+  background-color: darken(@primary,15%);
+  &> div {
+    background-color: @primary;
+    height: 100%;
+    color: fade(@hoopwhite, 70%);
+    h4 {
+      text-align: center;
+      margin: 0 auto;
+      padding: 1em;
+    }
+  }
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: darken(@primary, 30%);
+  box-shadow: inset 0 0 6px fade(@hoopwhite, 30%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-top: @primary 2px solid;
+  border-bottom: @primary 2px solid;
+  background-color: darken(@primary, 15%);
+  box-shadow: inset 0 0 6px fade(@hoopwhite, 10%);
 }
 
 /* COLORS */
 
-@primary: #72b54b;
-@secondary: #cf7f56;
-@tertiary: #923d84;
+@primary: darken(#72b54b, 20%);
+@secondary: #398a6f;
+@tertiary: #adc652;
 
 @hoopwhite: #fff;
 @hoopblack: #1a1a1a;
