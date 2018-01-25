@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/app.css'
+import './less/app.css'
 import Menu from "./modules/menu/Menu";
 import Trick from "./modules/Trick";
 
