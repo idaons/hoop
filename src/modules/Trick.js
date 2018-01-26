@@ -1,6 +1,6 @@
 import React from 'react';
-import HulaBW from '../img/hoop.svg';
-import ReactSVG from 'react-svg';
+import RotatingHoops from "./RotatingHoops/RotatingHoops";
+import BackgroundPic from '../img/hoopdance.jpg'
 
 
 const Category = {
@@ -26,13 +26,7 @@ const dummyObj = {
 function Trick(props){
     return(
         <div className="container trick-container">
-            <div className="container showcase">
-                <div className="rotate2">
-                    <ReactSVG path={HulaBW} />
-                </div>
-                <div className="rotate">
-                    <ReactSVG path={HulaBW} />
-                </div>
+            <div className="container showcase" style={{'background-image': `url(${BackgroundPic})`}}>
                 <h1 className="overskrift">{dummyObj.name}</h1>
             </div>
             <div className="container">
