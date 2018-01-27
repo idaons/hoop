@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BackgroundPic from '../img/hoopdance.jpg'
 import triksListe from "../input/data";
+import RotatingHoops from './RotatingHoops/RotatingHoops';
 
 class Trick extends React.Component {
 
@@ -20,6 +21,22 @@ class Trick extends React.Component {
 
     onPrevClick = () => {
         this.setState({trickIndex: this.state.trickIndex -1})
+    }
+
+    lagShowcase(triks) {
+        const backgroundPickExists = false;
+        const inlineBackgroundPick = backgroundPickExists ? {'backgroundImage': `url(${BackgroundPic})`} : {};
+        const rotatingHoops = !backgroundPickExists ? <RotatingHoops /> : '';
+
+        return (
+            <div
+                className="container showcase"
+                style={inlineBackgroundPick}
+            >
+                {rotatingHoops}
+                <h1 className="overskrift">{triks.name}</h1>
+            </div>
+        );
     }
 
     render() {
@@ -43,18 +60,16 @@ class Trick extends React.Component {
 
         return(
             <div className="container trick-container">
-                <div className="container showcase" style={{'backgroundImage': `url(${BackgroundPic})`}}>
-                    <h1 className="overskrift">{triks.name}</h1>
-                </div>
+                {this.lagShowcase(triks)}
                 <div className="container">
-                    {triks.categories.map((category,i) =>
+                    {triks.categories.map((category, i) =>
                         <span key={i} className="etikett">
-                            {category }
+                            {category}
                         </span>
                     )}
                     <ul>
                         {triks.description.split('.').map((step, i) =>
-                            step.length>0 && <li key={i}>{step}</li>
+                            step.length > 0 && <li key={i}>{step}</li>
                         )}
                     </ul>
                 </div>
