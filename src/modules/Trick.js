@@ -1,57 +1,90 @@
 import React from 'react';
-import RotatingHoops from "./RotatingHoops/RotatingHoops";
+import PropTypes from 'prop-types';
 import BackgroundPic from '../img/hoopdance.jpg'
+import triksListe from "../input/data";
+
+class Trick extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            trickIndex: 0
+        };
+    }
+
+    onNextClick = () => {
+        console.log('onklik', this.state.trickIndex);
+        this.setState({trickIndex: this.state.trickIndex +1})
+
+    }
+
+    onPrevClick = () => {
+        this.setState({trickIndex: this.state.trickIndex -1})
+    }
+
+    render() {
+        const {data} = this.props;
 
 
-const Category = {
-    OFF_BODY: 'Off-body',
-    COMBO: 'Combo',
-    VERTICAL: 'Vertical'
-};
-const dummyObj = {
-    id: undefined,
-    name: 'Spleiselag Christina S',
-    description: `Flipp ringen over ryggen: Start med tommel opp 
-        på ringen, rull over hånda og før ringen rundt foran deg slik 
-        at tommelen kommer opp. Før ringen bak ryggen og la den falle 
-        ned (som fra escalator), sett ben i kryss, før ring ut og rundt
-        mens du snur deg helt rundt. Bytt hånd og gjør isopops til hver
-        side.`,
-    categories: [Category.OFF_BODY, Category.COMBO, Category.VERTICAL],
-    leadingTricks:  [],
-    trailingTricks: [],
-    video: 'https://www.facebook.com/gerald.torgersen/videos/10215738877330922/'
-};
+        // Funker ikke
+        if(triksListe.length === 0 ){
+            return(
+                <div> Ingen triks tilgjengelig :( </div>
+            );
+        }
 
-function Trick(props){
-    return(
-        <div className="container trick-container">
-            <div className="container showcase" style={{'background-image': `url(${BackgroundPic})`}}>
-                <h1 className="overskrift">{dummyObj.name}</h1>
-            </div>
-            <div className="container">
-                {dummyObj.categories.map((category,i) =>
-                    <span className="etikett">
-                        {category }
-                    </span>
-                )}
-                <ul>
-                    {dummyObj.description.split('.').map((step, i) =>
-                        step.length>0 && <li key={i}>{step}</li>
+        console.log('render', this.state.trickIndex, data[this.state.trickIndex]);
+
+        const hasNext = triksListe.length > this.state.trickIndex + 1;
+        const hasPrev = this.state.trickIndex > 0;
+        const triks = data[this.state.trickIndex];
+
+
+
+        return(
+            <div className="container trick-container">
+                <div className="container showcase" style={{'backgroundImage': `url(${BackgroundPic})`}}>
+                    <h1 className="overskrift">{triks.name}</h1>
+                </div>
+                <div className="container">
+                    {triks.categories.map((category,i) =>
+                        <span key={i} className="etikett">
+                            {category }
+                        </span>
                     )}
-                </ul>
+                    <ul>
+                        {triks.description.split('.').map((step, i) =>
+                            step.length>0 && <li key={i}>{step}</li>
+                        )}
+                    </ul>
+                </div>
+                <div className="mb-l">
+                    <a
+                        className="link"
+                        href={triks.video}>Link til video</a>
+                </div>
+                <div className="center">
+                    {hasPrev && ( <button className="button"
+                            onClick={this.onPrevClick}>
+                        Forrige
+                    </button>)}
+                    {hasNext && (<button className="button"
+                            onClick={this.onNextClick}>
+                        Neste
+                    </button>)}
+                </div>
             </div>
-            <div className="mb-l">
-                <a
-                    className="link"
-                    href={dummyObj.video}>Link til video</a>
-            </div>
-            <div className="center">
-                <button className="button">Forrige</button>
-                <button className="button">Neste</button>
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Trick;
+
+
+Trick.propTypes = {
+    triksListe: PropTypes.object
+};
+
+Trick.defaultProps = {
+    triksListe: {}
+};

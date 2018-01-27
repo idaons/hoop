@@ -2,6 +2,7 @@
   "name": "hoop-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://idaons.github.io/hoop/build/",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",

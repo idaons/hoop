@@ -16,7 +16,7 @@ function Menu({open, callback, height}){
     return(
         <div className="menu-container">
             <div id="menu" className="menu" style={showContent()}>
-                <div className="container" style={{'background-image': `url(${HulaDancer})`}}>
+                <div className="container" style={{'backgroundImage': `url(${HulaDancer})`}}>
                     <div className="topWrapper">
                         <a href="#" className="btn-close" onClick={()=>callback()}>
                             <img className="svg" src={HulaColor} alt="Colorful Hula Hoop" />
@@ -44,7 +44,7 @@ Menu.propTypes = {
 };
 
 Menu.defaultProps = {
-    height: '310',
+    height: 310
 };
 
 export default Menu;

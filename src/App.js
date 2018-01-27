@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './less/app.css'
 import Menu from "./modules/menu/Menu";
 import Trick from "./modules/Trick";
+import data from './input/data.js';
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
                 <Menu open={this.state.menuOpen} callback={()=>this.toggleMenu()}/>
             </div>
             <div className="main-content">
-                <Trick/>
+                <Trick data={data}/>
             </div>
             <footer className="footer">
                 <div className="container">
