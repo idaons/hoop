@@ -1,29 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BackgroundPic from '../img/hoopdance.jpg'
-import triksListe from "../input/data";
 import RotatingHoops from './RotatingHoops/RotatingHoops';
+import * as data from '../input/data.js';
+import {Link} from 'react-router-dom';
+import ReactGA from "react-ga";
 
 class Trick extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            trickIndex: 0
-        };
-    }
 
-    onNextClick = () => {
-        console.log('onklik', this.state.trickIndex);
-        this.setState({trickIndex: this.state.trickIndex +1})
-
-    }
-
-    onPrevClick = () => {
-        this.setState({trickIndex: this.state.trickIndex -1})
-    }
-
-    lagShowcase(triks) {
+    lagShowcase = (triks) => {
         const backgroundPickExists = false;
         const inlineBackgroundPick = backgroundPickExists ? {'backgroundImage': `url(${BackgroundPic})`} : {};
         const rotatingHoops = !backgroundPickExists ? <RotatingHoops /> : '';
@@ -40,28 +25,30 @@ class Trick extends React.Component {
     }
 
     render() {
-        const {data} = this.props;
+        const trickId = parseInt(this.props.match.params.id, 10);
+        ReactGA.event({
+            category: 'Triks besøkt',
+            action: 'Så på triks nummer ' + trickId
+        });
 
-
-        // Funker ikke
-        if(triksListe.length === 0 ){
+        if(data.count()  <= trickId ){
             return(
-                <div> Ingen triks tilgjengelig :( </div>
+                <div className="container trick-container">
+                    <div className="feilmelding">
+                    Finner ikke trikset :(
+                    </div>
+                </div>
             );
         }
 
-        console.log('render', this.state.trickIndex, data[this.state.trickIndex]);
-
-        const hasNext = triksListe.length > this.state.trickIndex + 1;
-        const hasPrev = this.state.trickIndex > 0;
-        const triks = data[this.state.trickIndex];
-
-
+        const hasNext = data.count() > trickId + 1;
+        const hasPrev = trickId > 0;
+        const triks = data.get(trickId);
 
         return(
             <div className="container trick-container">
                 {this.lagShowcase(triks)}
-                <div className="container">
+                <div>
                     {triks.categories.map((category, i) =>
                         <span key={i} className="etikett">
                             {category}
@@ -76,17 +63,18 @@ class Trick extends React.Component {
                 <div className="mb-l">
                     <a
                         className="link"
-                        href={triks.video}>Link til video</a>
+                        href={triks.video}
+                        target="_blank">Link til video</a>
                 </div>
                 <div className="center">
-                    {hasPrev && ( <button className="button"
-                            onClick={this.onPrevClick}>
+                    {hasPrev && ( <Link className="button"
+                            to={`/triks/${trickId -1}`}>
                         Forrige
-                    </button>)}
-                    {hasNext && (<button className="button"
-                            onClick={this.onNextClick}>
+                    </Link>)}
+                    {hasNext && (<Link className="button"
+                           to={`/triks/${trickId + 1}`}>
                         Neste
-                    </button>)}
+                    </Link>)}
                 </div>
             </div>
         );
@@ -95,11 +83,3 @@ class Trick extends React.Component {
 
 export default Trick;
 
-
-Trick.propTypes = {
-    triksListe: PropTypes.object
-};
-
-Trick.defaultProps = {
-    triksListe: {}
-};
