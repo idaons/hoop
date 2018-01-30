@@ -2,6 +2,8 @@ import React from 'react';
 import PT from 'prop-types';
 import HulaColor from '../../img/hula-hoop.svg';
 import HulaDancer from '../../img/hula-dancer.svg'
+import {allTricks} from '../../input/data.js';
+import {Link} from 'react-router-dom';
 
 function Menu({open, callback, height}){
 
@@ -21,10 +23,16 @@ function Menu({open, callback, height}){
                     </div>
                     <div className="content">
                         <nav className="navigation">
-                            <button>Legg til triks</button>
-                            <button>Bla gjennom triks</button>
-                            <button>Søk</button>
-                            <button>Lag hoop-sekvens</button>
+                            <ul>
+                                {
+                                    allTricks().map(t => (
+                                        <li key={t.id}>
+                                            <Link to={`/triks/${t.id}`}
+                                            onClick={()=>callback()}>{t.name}</Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
                         </nav>
                     </div>
                 </div>

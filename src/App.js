@@ -3,11 +3,11 @@ import './less/app.css'
 import Menu from "./modules/menu/Menu";
 import Trick from "./modules/Trick";
 import {
-    Redirect,
     Route,
     Switch
 } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import Home from "./modules/Home"
 
 
 class App extends Component {
@@ -22,9 +22,17 @@ class App extends Component {
     }
 
     toggleMenu(){
-    this.setState({
-        menuOpen: !this.state.menuOpen
-    });
+        this.setState({
+            menuOpen: !this.state.menuOpen
+        });
+    }
+
+
+    openMenu(){
+        console.log("openMenu");
+        this.setState({
+            menuOpen: true
+        });
     }
 
 
@@ -36,8 +44,11 @@ class App extends Component {
                 </div>
                 <div className="main-content">
                     <Switch>
-                        <Route exact path="/" component={() => <Redirect to="/triks/0" />}/>
+                        {/*<Route exact path="/" component={() => <Redirect to="/triks/0" />}/>*/}
                         <Route path='/triks/:id' component={Trick}/>
+                        <Route exact path='/' render={(props) => (
+                            <Home {...props} openMenu={()=>this.openMenu()} />
+                        )}/>
                     </Switch>
                 </div>
                 <footer className="footer">

@@ -45,7 +45,7 @@ const triks = [
         "categories": [
             Category.OFF_BODY,
             Category.COMBO,
-            Category.VERTICAL
+            Category.SPLEIS
         ],
         "leadingTricks": [],
         "trailingTricks": [],
@@ -70,11 +70,10 @@ const triks = [
 export const count = () => {
     return triks.length;
 };
-/*
-const all = () => {
+
+export const allTricks = () => {
     return triks;
 };
-*/
 
 export const get = (id) => {
     const isTriks = t => t.id === id
@@ -82,20 +81,3 @@ export const get = (id) => {
 };
 
 
-
-/*
-const dummyObj = {
-    id: undefined,
-    name: 'Spleiselag Christina S',
-    description: `Flipp ringen over ryggen: Start med tommel opp
-        på ringen, rull over hånda og før ringen rundt foran deg slik
-        at tommelen kommer opp. Før ringen bak ryggen og la den falle
-        ned (som fra escalator), sett ben i kryss, før ring ut og rundt
-        mens du snur deg helt rundt. Bytt hånd og gjør isopops til hver
-        side.`,
-    categories: [Category.OFF_BODY, Category.COMBO, Category.VERTICAL],
-    leadingTricks:  [],
-    trailingTricks: [],
-    video: 'https://www.facebook.com/gerald.torgersen/videos/10215738877330922/'
-};
-*/
