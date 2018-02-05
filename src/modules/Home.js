@@ -10,8 +10,8 @@ class Home extends React.Component {
     };
     render() {
         return (
-            <div className="container">
-                <div className=" showcase">
+            <div className="container home-container">
+                <div className="showcase">
                     <RotatingHoops />
                 </div>
             </div>

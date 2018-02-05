@@ -2,7 +2,7 @@
   "name": "hoop-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://idaons.github.io/hoop/build/",
+  "homepage": "http://idaons.github.io/hoop/",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
@@ -19,7 +19,9 @@
     "start:js": "react-scripts start",
     "start:less": "autoless src",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "autoless": "^0.1.7",

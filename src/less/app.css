@@ -192,7 +192,10 @@
   margin-top: 3rem;
   text-align: center;
 }
-.showcase {
+.home-container {
+  height: 100%;
+}
+.home-container .showcase {
   position: relative;
   height: 100%;
   background-color: black;
