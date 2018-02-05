@@ -64,7 +64,8 @@ class Trick extends React.Component {
                     <a
                         className="link"
                         href={triks.video}
-                        target="_blank">Link til video</a>
+                        target="_blank"
+                        rel="noopener">Link til video</a>
                 </div>
                 <div className="center">
                     {hasPrev && ( <Link className="button"
