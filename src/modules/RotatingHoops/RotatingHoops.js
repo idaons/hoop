@@ -7,43 +7,6 @@ const RotatingHoopsStyle = styled.div`
   & > * {
     position: absolute;
   }
-  .rotate {
-    margin-top: 10px;
-    width: 100%;
-    @keyframes App-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-    animation: App-logo-spin infinite 240s linear;
-    svg {
-      width: 100%;
-      stroke: darken(@tertiary, 30%);
-      fill: transparent;
-    }
-  }
-  .rotate2 {
-    top: -50%;
-    left: -50%;
-    width: 400%;
-    @keyframes App-logo-spin2 {
-      from {
-        transform: rotate(360deg);
-      }
-      to {
-        transform: rotate(0deg);
-      }
-    }
-    animation: App-logo-spin2 infinite 2000s linear;
-    svg {
-      width: 100%;
-      stroke: darken(@tertiary, 40%);
-      fill: transparent;
-    }
-  }
 `;
 
 const RotateStyle = styled.div`
@@ -60,7 +23,7 @@ const RotateStyle = styled.div`
   animation: App-logo-spin infinite 240s linear;
   svg {
     width: 100%;
-    stroke: darken(@tertiary, 30%);
+    stroke: #52601f;
     fill: transparent;
   }
 `;
@@ -80,7 +43,7 @@ const RotateStyle2 = styled.div`
   animation: App-logo-spin2 infinite 2000s linear;
   svg {
     width: 100%;
-    stroke: darken(@tertiary, 40%);
+    stroke: #313913;
     fill: transparent;
   }
 `;
